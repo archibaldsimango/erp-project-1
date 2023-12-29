@@ -1,0 +1,53 @@
+{
+  "name": "erp-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/erp-backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/erp-backend",
+        "main": "apps/erp-backend/src/main.ts",
+        "tsConfig": "apps/erp-backend/tsconfig.app.json",
+        "assets": ["apps/erp-backend/src/assets"],
+        "webpackConfig": "apps/erp-backend/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "erp-backend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "erp-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "erp-backend:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/erp-backend/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
