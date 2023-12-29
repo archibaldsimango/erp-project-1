@@ -15,7 +15,8 @@
         "main": "apps/erp-backend/src/main.ts",
         "tsConfig": "apps/erp-backend/tsconfig.app.json",
         "assets": ["apps/erp-backend/src/assets"],
-        "webpackConfig": "apps/erp-backend/webpack.config.js"
+        "webpackConfig": "apps/erp-backend/webpack.config.js",
+        "postcssConfig": "apps/erp-backend/postcss.config.js"
       },
       "configurations": {
         "development": {},

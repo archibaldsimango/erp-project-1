@@ -1,13 +1,10 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-
-import NxWelcome from './nx-welcome';
+import GeneralLayout from "./layouts/GeneralLayout";
 
 export function App() {
   return (
-    <div>
-      <NxWelcome title="erp-dashboard" />
-    </div>
+   <GeneralLayout>
+    asfjlkj;lkjasd
+   </GeneralLayout>
   );
 }
 
