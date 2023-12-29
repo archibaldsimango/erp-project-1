@@ -5,7 +5,19 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": ["vite/client", "vitest"]
+    "types": ["vite/client", "vitest"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/app/components/*"],
+      "@helpers/*": ["src/app/helpers/*"],
+      "@configs/*": ["src/app/configs/*"],
+      "@layouts/*": ["src/app/layouts/*"],
+      "@context/*": ["src/app/context/*"],
+      "@assets/*": ["src/assets/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@utils/*": ["src/app/utils/*"],
+      "@hooks/*": ["src/app/hooks/*"]
+    }
   },
   "files": [],
   "include": [],
@@ -17,5 +29,6 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "extends": "../../tsconfig.base.json"
+  "extends": "../../tsconfig.base.json",
+  
 }
